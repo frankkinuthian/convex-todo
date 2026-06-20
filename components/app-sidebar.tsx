@@ -5,6 +5,7 @@ import Link from "next/link";
 import type * as React from "react";
 import { data } from "@/components/constants";
 import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
 import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
@@ -38,6 +39,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
+        <NavProjects />
       </SidebarContent>
       <SidebarFooter>
         <NavUser />
