@@ -1,7 +1,7 @@
 "use client";
 
-import { TodoList } from "@/components/todos/todo-list";
 import { QuickAdd } from "@/components/todos/quick-add";
+import { TodoList } from "@/components/todos/todo-list";
 import {
   useTodayTodos,
   useToggleComplete,

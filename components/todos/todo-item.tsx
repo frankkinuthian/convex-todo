@@ -1,10 +1,10 @@
 "use client";
 
-import type { Doc } from "@/convex/_generated/dataModel";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import type { Doc } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 
 type Priority = "low" | "medium" | "high";

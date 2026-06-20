@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Plus, SlidersHorizontal } from "lucide-react";
-import { useCreateTodo } from "@/hooks/use-todos";
-import { CreateTodoDrawer } from "@/components/todos/create-todo-drawer";
+import { useState } from "react";
 import { toast } from "sonner";
+import { CreateTodoDrawer } from "@/components/todos/create-todo-drawer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import type { Id } from "@/convex/_generated/dataModel";
+import { useCreateTodo } from "@/hooks/use-todos";
 
 type QuickAddProps = {
   projectId?: Id<"projects">;

@@ -1,15 +1,15 @@
 "use client";
 
 import { use } from "react";
-import { TodoList } from "@/components/todos/todo-list";
 import { QuickAdd } from "@/components/todos/quick-add";
+import { TodoList } from "@/components/todos/todo-list";
+import type { Id } from "@/convex/_generated/dataModel";
+import { useProject } from "@/hooks/use-projects";
 import {
+  useProjectTodos,
   useToggleComplete,
   useToggleStar,
-  useProjectTodos,
 } from "@/hooks/use-todos";
-import { useProject } from "@/hooks/use-projects";
-import type { Id } from "@/convex/_generated/dataModel";
 
 export default function ProjectPage({
   params,

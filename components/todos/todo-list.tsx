@@ -1,8 +1,8 @@
 "use client";
 
-import type { Doc } from "@/convex/_generated/dataModel";
-import { TodoItem } from "@/components/todos/todo-item";
 import { CheckSquare } from "lucide-react";
+import { TodoItem } from "@/components/todos/todo-item";
+import type { Doc } from "@/convex/_generated/dataModel";
 
 type TodoListProps = {
   todos: Doc<"todos">[] | null | undefined;

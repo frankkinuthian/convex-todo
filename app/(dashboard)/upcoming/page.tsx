@@ -1,11 +1,11 @@
 "use client";
 
-import { TodoList } from "@/components/todos/todo-list";
 import { QuickAdd } from "@/components/todos/quick-add";
+import { TodoList } from "@/components/todos/todo-list";
 import {
-  useUpcomingTodos,
   useToggleComplete,
   useToggleStar,
+  useUpcomingTodos,
 } from "@/hooks/use-todos";
 
 export default function UpcomingPage() {

@@ -2,9 +2,9 @@
 
 import { useMutation } from "convex/react";
 import { useEffect } from "react";
-import { api } from "@/convex/_generated/api";
-import { TodoList } from "@/components/todos/todo-list";
 import { QuickAdd } from "@/components/todos/quick-add";
+import { TodoList } from "@/components/todos/todo-list";
+import { api } from "@/convex/_generated/api";
 import {
   useInboxTodos,
   useToggleComplete,
