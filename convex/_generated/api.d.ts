@@ -8,13 +8,17 @@
  * @module
  */
 
+import type * as users_mutations from "../users/mutations.js";
+
 import type {
   ApiFromModules,
   FilterApi,
   FunctionReference,
 } from "convex/server";
 
-declare const fullApi: ApiFromModules<{}>;
+declare const fullApi: ApiFromModules<{
+  "users/mutations": typeof users_mutations;
+}>;
 
 /**
  * A utility for referencing Convex functions in your app's public API.

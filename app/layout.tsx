@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import ConvexClientProvider from "@/components/providers/auth/convex-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { shadcn } from '@clerk/ui/themes'
 import { cn } from "@/lib/utils";
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-sans" });
@@ -49,7 +50,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkProvider>
+          <ClerkProvider appearance={{ theme: shadcn }}>
             <ConvexClientProvider>{children}</ConvexClientProvider>
             <Toaster closeButton />
           </ClerkProvider>
