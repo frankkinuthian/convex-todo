@@ -1,5 +1,7 @@
 "use client";
 
+import { CheckSquare } from "lucide-react";
+import Link from "next/link";
 import type * as React from "react";
 import { data } from "@/components/constants";
 import { NavMain } from "@/components/nav-main";
@@ -14,8 +16,6 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import Link from "next/link";
-import { CheckSquare } from "lucide-react";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

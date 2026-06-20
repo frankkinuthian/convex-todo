@@ -1,6 +1,6 @@
 import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
 import React from "react";
+import { api } from "@/convex/_generated/api";
 
 const TodosTestQueryComponent = () => {
   const inbox = useQuery(api.todos.queries.listInbox);

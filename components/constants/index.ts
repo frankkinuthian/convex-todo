@@ -1,4 +1,4 @@
-import { CheckSquare, Calendar, FolderKanban, Settings2 } from "lucide-react";
+import { Calendar, CheckSquare, FolderKanban, Settings2 } from "lucide-react";
 
 export const data = {
   navMain: [

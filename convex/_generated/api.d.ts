@@ -8,8 +8,10 @@
  * @module
  */
 
+import type * as projects_mutations from "../projects/mutations.js";
 import type * as projects_queries from "../projects/queries.js";
 import type * as seed from "../seed.js";
+import type * as todos_mutations from "../todos/mutations.js";
 import type * as todos_queries from "../todos/queries.js";
 import type * as users_mutations from "../users/mutations.js";
 import type * as users_queries from "../users/queries.js";
@@ -21,8 +23,10 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  "projects/mutations": typeof projects_mutations;
   "projects/queries": typeof projects_queries;
   seed: typeof seed;
+  "todos/mutations": typeof todos_mutations;
   "todos/queries": typeof todos_queries;
   "users/mutations": typeof users_mutations;
   "users/queries": typeof users_queries;
