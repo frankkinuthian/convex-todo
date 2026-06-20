@@ -6,17 +6,34 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { Skeleton } from "@/components/ui/skeleton";
 import { ModeToggle } from "./ui/theme-toggle";
 
 export function NavUser() {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
+
+  if (!isLoaded) {
+    return (
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton size="lg">
+            <Skeleton className="h-8 w-8 rounded-lg" />
+            <div className="grid flex-1 gap-1">
+              <Skeleton className="h-3 w-24" />
+              <Skeleton className="h-2.5 w-32" />
+            </div>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
+    );
+  }
 
   return (
     <SidebarMenu>
       <SidebarMenuItem>
-        <SidebarMenuItem>
-          <ModeToggle />
-        </SidebarMenuItem>
+        <ModeToggle />
+      </SidebarMenuItem>
+      <SidebarMenuItem>
         <SidebarMenuButton size="lg" className="cursor-default">
           <UserButton
             appearance={{
