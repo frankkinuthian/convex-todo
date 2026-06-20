@@ -1,34 +1,23 @@
 "use client";
 
-import { useMutation } from "convex/react";
-import { useEffect } from "react";
-import { api } from "@/convex/_generated/api";
 import { TodoList } from "@/components/todos/todo-list";
 import { QuickAdd } from "@/components/todos/quick-add";
 import {
-  useInboxTodos,
+  useTodayTodos,
   useToggleComplete,
   useToggleStar,
 } from "@/hooks/use-todos";
 
-export default function DashboardPage() {
-  const storeUser = useMutation(api.users.mutations.store);
-
-  const todos = useInboxTodos();
+export default function TodayPage() {
+  const todos = useTodayTodos();
   const toggleComplete = useToggleComplete();
   const toggleStar = useToggleStar();
-
-  useEffect(() => {
-    storeUser();
-  }, [storeUser]);
 
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <h1 className="text-xl font-semibold">Inbox</h1>
-        <p className="text-sm text-muted-foreground">
-          Tasks without a due date
-        </p>
+        <h1 className="text-xl font-semibold">Today</h1>
+        <p className="text-sm text-muted-foreground">Tasks due today</p>
       </div>
       <TodoList
         todos={todos}

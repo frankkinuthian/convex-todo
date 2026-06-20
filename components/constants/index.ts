@@ -9,9 +9,9 @@ export const data = {
       isActive: true,
       items: [
         { title: "Inbox", url: "/dashboard" },
-        { title: "Today", url: "/dashboard/today" },
-        { title: "Upcoming", url: "/dashboard/upcoming" },
-        { title: "Starred", url: "/dashboard/starred" },
+        { title: "Today", url: "/today" },
+        { title: "Upcoming", url: "/upcoming" },
+        { title: "Starred", url: "/starred" },
       ],
     },
     {

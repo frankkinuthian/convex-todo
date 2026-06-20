@@ -5,18 +5,16 @@ export const getProjectsByUserId = query({
   args: {},
   handler: async (ctx) => {
     const identity = await ctx.auth.getUserIdentity();
-    if (!identity) throw new Error("Not authenticated");
+    if (!identity) return null;
 
-    // Look up the user to get their _id
     const user = await ctx.db
       .query("users")
       .withIndex("by_token", (q) =>
         q.eq("tokenIdentifier", identity.tokenIdentifier),
       )
       .unique();
-    if (!user) throw new Error("User not found");
+    if (!user) return null;
 
-    // Now use the trusted _id from the db
     return await ctx.db
       .query("projects")
       .withIndex("by_user", (q) => q.eq("userId", user._id))

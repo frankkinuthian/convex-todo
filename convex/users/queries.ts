@@ -4,8 +4,7 @@ export const getCurrentUser = query({
   args: {},
   handler: async (ctx) => {
     const userIdentity = await ctx.auth.getUserIdentity();
-
-    if (!userIdentity) throw new Error("Not authenticated");
+    if (!userIdentity) return null;
 
     const user = await ctx.db
       .query("users")
@@ -13,9 +12,7 @@ export const getCurrentUser = query({
         q.eq("tokenIdentifier", userIdentity.tokenIdentifier),
       )
       .unique();
-    if (!user) {
-      throw new Error("User not found.");
-    }
+    if (!user) return null;
 
     return user;
   },
